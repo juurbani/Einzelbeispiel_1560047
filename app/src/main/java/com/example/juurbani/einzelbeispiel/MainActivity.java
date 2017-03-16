@@ -36,10 +36,16 @@ public class MainActivity extends AppCompatActivity {
                 zahl1 = Double.parseDouble(eingabe1.getText().toString());
                 zahl2 = Double.parseDouble(eingabe2.getText().toString());
 
-                ergebnis_zahl = zahl1 / zahl2;
+                if(zahl2 == 0){
+                    ergebnis.setText("Sie können nicht durch 0 dividieren!");
 
-                ergebnis.setText(ergebnis_zahl +"");
+                }else if(zahl1 == 0){
+                    ergebnis.setText("0");
 
+                }else {
+                    ergebnis_zahl = zahl1 / zahl2;
+                    ergebnis.setText(ergebnis_zahl + "");
+                }
             }
         });
 
